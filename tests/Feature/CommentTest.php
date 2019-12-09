@@ -29,7 +29,7 @@ class CommentTest extends TestCase
         $response->assertStatus(200);
 
         $this->assertDatabaseHas('comments', [
-            'title' => $comment->title,
+            'name' => $comment->name,
             'body' => $comment->body
         ]);
     }

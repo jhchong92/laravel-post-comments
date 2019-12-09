@@ -26,7 +26,6 @@ class AuthTest extends TestCase
         ]);
 
         $response->assertStatus(200);
-        $response->dump();
         $this->assertDatabaseHas('users', [
             'email' => $user->email
         ]);
