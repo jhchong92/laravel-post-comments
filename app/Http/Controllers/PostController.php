@@ -20,6 +20,12 @@ class PostController extends Controller
         return PostResource::collection(Post::all());
     }
 
+    
+    public function indexTopFive()
+    {
+        $postsQuery = Post::withCount('comments')->orderBy('comments_count')->limit(5);
+        return PostResource::collection($postsQuery->get());
+    }
     /**
      * Store a newly created resource in storage.
      *
