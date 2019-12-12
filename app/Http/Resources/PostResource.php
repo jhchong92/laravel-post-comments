@@ -19,6 +19,7 @@ class PostResource extends JsonResource
             'userId' => $this->user_id,
             'title' => $this->title,
             'body' => $this->body,
+            'comments_count' => $this->when(isset($this->comments_count), $this->comments_count)
         ];
     }
 }
